@@ -10,8 +10,20 @@ phases:
       - echo Build started on `date`
       - echo Building the Docker image...          
       - docker-compose build
+      - docker tag serverless:latest 310808216338.dkr.ecr.us-west-2.amazonaws.com/serverless:latest
+      - docker tag cvat:latest 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat:latest
+      - docker tag cvat_proxy:latest 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat_proxy:latest
+      - docker tag cvat_redis:latest 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat_redis:latest
+      - docker tag cvat_ui:latest 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat_ui:latest
+      - docker tag cvat_db:latest 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat_db:latest
+
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker-compose push
+      - docker push 310808216338.dkr.ecr.us-west-2.amazonaws.com/serverless:latest
+      - docker push 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat:latest
+      - docker push 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat_proxy:latest
+      - docker push 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat_redis:latest
+      - docker push 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat_ui:latest
+      - docker push 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat_db:latest
