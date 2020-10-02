@@ -9,7 +9,7 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Docker image...          
-      - docker-compose build docker-compose.yml
+      - docker-compose build .
       - docker tag cvat:latest 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat:latest      
   post_build:
     commands:
