@@ -20,7 +20,7 @@ services:
     environment:
       http_proxy:
       https_proxy:
-      no_proxy: 172.28.0.1,${no_proxy}
+      no_proxy: 172.28.0.1
       NUCLIO_CHECK_FUNCTION_CONTAINERS_HEALTHINESS: "true"
     ports:
       - "8070:8070"
