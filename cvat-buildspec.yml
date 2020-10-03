@@ -11,10 +11,10 @@ phases:
       - echo Building the Docker image...          
       - docker-compose build
       - docker tag quay.io/nuclio/dashboard:1.4.8-amd64 310808216338.dkr.ecr.us-west-2.amazonaws.com/serverless:latest
-      - docker tag cvat/server 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat:latest
+      - docker tag cvat/server:latest 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat:latest
       - docker tag nginx:stable-alpine 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat_proxy:latest
       - docker tag redis:4.0-alpine 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat_redis:latest
-      - docker tag cvat/ui 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat_ui:latest
+      - docker tag cvat/ui:latest 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat_ui:latest
       - docker tag postgres:10-alpine 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat_db:latest
   post_build:
     commands:
