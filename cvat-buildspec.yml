@@ -16,6 +16,7 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat:latest
-      - docker push 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat_ui:latest
+      - docker push 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat
+      - docker push 310808216338.dkr.ecr.us-west-2.amazonaws.com/cvat_ui
+      
       
