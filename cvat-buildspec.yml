@@ -24,8 +24,8 @@ phases:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
-      - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat
-      - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat_ui
+      - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat:latest
+      - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat_ui:latest
       - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/postgres:10-alpine
       - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/redis:4.0-alpine
       - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/nginx:stable-alpine
