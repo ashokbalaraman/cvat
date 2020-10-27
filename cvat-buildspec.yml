@@ -13,21 +13,21 @@ phases:
       - docker-compose pull cvat_db
       - docker-compose pull cvat_redis
       - docker-compose pull cvat_proxy
-      - docker-compose pull cvat_serverless
+      - docker-compose pull serverless
       - docker tag cvat/server:latest 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat:latest
       - docker tag cvat/ui:latest 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat_ui:latest 
-      - docker tag postgres:10-alpine 626843494486.dkr.ecr.us-west-2.amazonaws.com/postgres:10-alpine
-      - docker tag redis:4.0-alpine 626843494486.dkr.ecr.us-west-2.amazonaws.com/redis:4.0-alpine
-      - docker tag nginx:stable-alpine 626843494486.dkr.ecr.us-west-2.amazonaws.com/nginx:stable-alpine
-      - docker tag quay.io/nuclio/dashboard:1.4.8-amd64 626843494486.dkr.ecr.us-west-2.amazonaws.com/quay.io/nuclio/dashboard:1.4.8-amd64
+      - docker tag postgres:10-alpine 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat_db:latest
+      - docker tag redis:4.0-alpine 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat_redis:latest
+      - docker tag nginx:stable-alpine 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat_proxy:latest
+      - docker tag quay.io/nuclio/dashboard:1.4.8-amd64 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat_serverless:latest
   post_build:
     commands:
       - echo Build completed on `date`
       - echo Pushing the Docker image...
       - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat:latest
       - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat_ui:latest
-      - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/postgres:10-alpine
-      - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/redis:4.0-alpine
-      - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/nginx:stable-alpine
-      - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/quay.io/nuclio/dashboard:1.4.8-amd64
+      - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat_db:latest
+      - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat_redis:latest
+      - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat_proxy:latest
+      - docker push 626843494486.dkr.ecr.us-west-2.amazonaws.com/cvat_serverless:latest
       
